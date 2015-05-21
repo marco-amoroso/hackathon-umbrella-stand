@@ -1,17 +1,19 @@
-var raining = require('./weather/raining.js');
-var ligths = require('./lights/index.js');
-var Repeat = require('repeat');
+var raining = require('./weather/raining.js'),
+  ligths = require('./lights/index.js'),
+  Repeat = require('repeat'),
+  status;
 
 function run() {
-  raining.location('Perth').then(function (result) {
+  raining.location('Sydney').then(function (result) {
     if (result === true) {
       console.log('raining');
-      ligths.setLights('rain');
+      status = 'rain';
     } else {
       console.log('not raining :)');
-      ligths.setLights('clear');
+      status = 'party';
     }
+    ligths.setLights(status, 2);
   });
 }
 
-Repeat(run).every(10, 's').for(2, 'minutes').start.in(1, 'sec');
+Repeat(run).every(10, 'sec').for(2, 'minutes').start.in(1, 'sec');

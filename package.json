@@ -10,9 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "q": "^1.4.1",
-    "request": "^2.55.0"
-  },
-  "dependencies": {
+    "request": "^2.55.0",
+    "ping": "^0.1.10",
     "repeat": "0.0.6"
   }
 }
