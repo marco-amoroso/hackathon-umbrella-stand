@@ -1,7 +1,9 @@
-var fetch = require('./weather/lib/fetch.js');
+var needABrolly = require('./weather/lib/fetch.js');
 
-fetch.location('Sydney').then(function (result) {
-   // if it's going to 
-  // console.log(result[0]);
-  // console.log(result[1]);
+needABrolly.location('Sydney').then(function (result) {
+   if (result === true) {
+   	console.log('raining');
+   } else {
+   	console.log('not raining tonight');
+   }
 });

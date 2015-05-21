@@ -37,18 +37,12 @@ module.exports = {
       // is it raining now?
       var currentWeather = results[0].value.current_observation.weather;
 
-
-
       if (rainyConditions.indexOf(currentWeather) !== -1) {
-        console.log('its gonna rain');
+        willItRain = true;
       }
 
-      //console.log(rainyConditions.indexOf(currentWeather));
-
-      //console.log(results[1].value.hourly_forecast[0].condition);
-
       // is it raining in the next couple of hours
-      deferred.resolve([results[0].value, results[1].value]);
+      deferred.resolve(willItRain);
     });
 
     return deferred.promise; 
