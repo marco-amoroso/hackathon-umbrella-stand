@@ -29,10 +29,25 @@ function fetchJSON(location, type) {
 
 module.exports = {
   location: function (location) {
-    var deferred = Q.defer();
+    var deferred = Q.defer(), rainyConditions = ['Rain', 'Rain Showers', 'Thunderstorm'];
 
-    Q.allSettled([fetchJSON(location), fetchJSON(location, 'conditions')]).then(function (results) {
+    Q.allSettled([fetchJSON(location, 'conditions'), fetchJSON(location)]).then(function (results) {
+      var willItRain = false;
 
+      // is it raining now?
+      var currentWeather = results[0].value.current_observation.weather;
+
+
+
+      if (rainyConditions.indexOf(currentWeather) !== -1) {
+        console.log('its gonna rain');
+      }
+
+      //console.log(rainyConditions.indexOf(currentWeather));
+
+      //console.log(results[1].value.hourly_forecast[0].condition);
+
+      // is it raining in the next couple of hours
       deferred.resolve([results[0].value, results[1].value]);
     });
 
