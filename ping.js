@@ -4,23 +4,12 @@ var ligths = require('./lights/index.js'),
 
 function run() {
   var host = '192.168.1.83';
+  var lightId = 2;
   ping.sys.probe(host, function (isAlive) {
     var status = isAlive ? 'off' : 'party';
     console.log(status);
-    ligths.setLights(status, 2);
+    ligths.setLights(status, lightId);
   });
 }
-
-// function run() {
-//   console.log(session);
-
-  // session.pingHost('http://finder.com.au', function (error) {
-  //   if (error) {
-  //     ligths.setLights('off', 2);
-  //   } else {
-  //     ligths.setLights('party', 2);
-  //   }
-  // });
-//}
 
 Repeat(run).every(3, 'sec').for(2, 'minutes').start.in(1, 'sec');
