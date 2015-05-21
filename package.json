@@ -9,6 +9,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "q": "^1.4.1"
+    "q": "^1.4.1",
+    "request": "^2.55.0"
+  },
+  "dependencies": {
+    "repeat": "0.0.6"
   }
 }
