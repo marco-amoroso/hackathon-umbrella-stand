@@ -30,7 +30,7 @@ function fetchJSON(location, countryCode, type) {
 
 module.exports = {
   location: function (city, countryCode) {
-    var deferred = Q.defer(), rainyConditions = ['Rain', 'Thunderstorm'];
+    var deferred = Q.defer(), rainyConditions = ['Rain', 'Thunderstorm', 'Drizzle', 'Snow', 'Hail', 'Squalls'];
 
     Q.allSettled([fetchJSON(city, countryCode, 'conditions'), fetchJSON(city, countryCode)]).then(function (results) {
       var willItRain = false, currentCondition = results[0].value.current_observation.weather;
