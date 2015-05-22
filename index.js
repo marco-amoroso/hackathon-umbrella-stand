@@ -14,6 +14,7 @@ function run() {
     }
     ligths.setLights(status, 1);
     ligths.setLights(status, 2);
+    ligths.setLights(status, 3);
   });
 }
 
