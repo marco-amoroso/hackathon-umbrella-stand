@@ -7,7 +7,9 @@ function buildForm(status) {
       'on': true,
       'bri': 253,
       'hue': 65527,
-      'sat': 253
+      'sat': 253,
+      'effect': 'none',
+      'alert': 'none'
     },
     partyForm = {
       'on': true,
