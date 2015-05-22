@@ -10,8 +10,9 @@ function run() {
       status = 'rain';
     } else {
       console.log('not raining :)');
-      status = 'party';
+      status = 'off';
     }
+    ligths.setLights(status, 1);
     ligths.setLights(status, 2);
   });
 }
