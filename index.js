@@ -17,4 +17,4 @@ function run() {
   });
 }
 
-Repeat(run).every(10, 'sec').for(2, 'minutes').start.in(1, 'sec');
+Repeat(run).every(30, 'sec').for(2, 'minutes').start.in(1, 'sec');
